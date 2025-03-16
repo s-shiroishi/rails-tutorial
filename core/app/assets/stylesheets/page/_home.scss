@@ -1,0 +1,44 @@
+@import '../variables';
+
+.home{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    .home-content{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+        justify-content: center;
+        background-color: $light-gray;
+        border-radius: 20px;
+        .home-title{
+            font-size: xxx-large;
+            font-weight: bold;
+        }
+    
+        .home-description{
+            font-size: large;
+            color: $dark-gray;
+            a{
+                color: $light-blue;
+            }
+        }
+        .signup-container{
+            padding-top: 30px;
+            .signup{
+                padding: 15px 30px;
+                background-color: $light-blue;
+                border-radius: 10px;
+                color: $white;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .home-logo{
+        display: flex;
+        align-items: center;
+    }
+}

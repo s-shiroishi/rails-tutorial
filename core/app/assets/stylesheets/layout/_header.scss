@@ -1,0 +1,28 @@
+@import 'layout';
+@import '../variables';
+
+header{
+    width: 100%;
+    background-color: $black;
+
+    .container{
+        @extend .container;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1{
+            font-weight: bold;
+            font-size: x-large;
+            color: #3981ae;
+        }
+
+        nav{
+            ul{
+                display: flex;
+                gap: 30px;
+                color: $gray;
+            }
+        }
+    }
+}

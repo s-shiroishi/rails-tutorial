@@ -1,0 +1,13 @@
+@import 'layout';
+@import '../page/home';
+
+main{
+    height: 100%;
+
+    .container{
+        @extend .container;
+        .home{
+            @extend .home;
+        }
+    }
+}
