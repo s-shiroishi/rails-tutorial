@@ -1,13 +1,17 @@
 @import 'layout';
-
+@import '../variables';
 footer{
     width: 100%;
 
+    hr{
+        padding-bottom: 10px;
+        color: $gray;
+    }
     .container{
         @extend .container;
+        color: $dark-gray;
         display: flex;
         justify-content: space-between;
-        align-items: center;
         nav{
             ul{
                 display: flex;

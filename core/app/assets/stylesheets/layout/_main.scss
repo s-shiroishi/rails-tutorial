@@ -1,6 +1,6 @@
 @import 'layout';
 @import '../page/home';
-
+@import '../page/signup';
 main{
     height: 100%;
 
@@ -9,5 +9,8 @@ main{
         .home{
             @extend .home;
         }
+        .signup-form-container{
+            @extend .signup-form-container;
+            } 
     }
 }

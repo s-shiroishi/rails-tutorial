@@ -11,17 +11,6 @@ services:
       TZ: "Asia/Tokyo"
     ports:
       - '3306:3306'
-
-  mysql-client:
-    image: mysql:8.0
-    platform: linux/arm64
-    command: bash -c "sleep infinity"
-    depends_on:
-      - db
-    environment:
-      MYSQL_HOST: db
-      MYSQL_ROOT_PASSWORD: password
-      TZ: "Asia/Tokyo"
   web:
     build: .
     working_dir: /core
