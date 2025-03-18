@@ -2202,3 +2202,46 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 2754)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('823569496780591680', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (4.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2025-03-17 10:47:30.824364', '2025-03-17 10:47:30.824366')[0m
+Migrating to CreateUsers (20250317104608)
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250317104608')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('823569496780591680')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (3.8ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`) VALUES ('michael', 'exanpe', '2025-03-17 11:29:54.409445', '2025-03-17 11:29:54.409445')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (6.4ms)[0m  [1m[33mUPDATE `users` SET `users`.`name` = 'el', `users`.`updated_at` = '2025-03-17 11:34:23.366227' WHERE `users`.`id` = 1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` /* loading for pp */ LIMIT 11[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('823569496780591680', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to AddIndexToUsersEmail (20250317121900)
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250317121900')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('823569496780591680')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('823569496780591680', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (4.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to AddPasswordDigestToUsers (20250318013822)
+  [1m[35m (16.7ms)[0m  [1m[35mALTER TABLE `users` ADD `password_digest` varchar(255)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250318013822')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('823569496780591680')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'michael@example.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`) VALUES ('Micheal Hartl', 'michael@example.com', '2025-03-18 01:52:09.633513', '2025-03-18 01:52:09.633513', '$2a$12$MbDyNvF2D28Vd69y1pA27e4jlKLg4ftrqZcn4Wj4t4fWs9li7HiQe')[0m
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` /* loading for pp */ LIMIT 11[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
