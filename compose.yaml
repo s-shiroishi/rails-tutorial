@@ -28,6 +28,11 @@ services:
     environment:
       MYSQL_PASSWORD: password
       TZ: "Asia/Tokyo"
+  webdriver_chrome:
+    image: selenium/standalone-chrome
+    platform: linux/amd64
+    ports:
+      - "4444:4444"
 volumes:
   gemdata:
   node_modules:

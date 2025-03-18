@@ -3,15 +3,15 @@
 <div class='signup-form-container'>
     <h2>Sign up</h2>
     <%= form_with(model: @user, html: { class: 'signup-form' }) do |f|%>
-        <%= render 'shared/error_messages', object: f.object%>
-        <%= f.label :name %>
-        <%= f.text_field :name, class: "form-with-border" %>
-        <%= f.label :email %>
-        <%= f.email_field :email, class: "form-with-border" %>
-        <%= f.label :password %>
-        <%= f.password_field :password, class: "form-with-border" %>
-        <%= f.label :password_confirmation, 'Confirmation' %>
-        <%= f.password_field :password_confirmation, class: "form-with-border" %>
-        <%= f.submit "Create my account", class: "signup-button" %>
+    <%= render 'shared/error_messages', object: f.object%>
+    <%= f.label :name%>
+    <%= f.text_field :name, class: "form-with-border" %>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-with-border" %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-with-border" %>
+    <%= f.label :password_confirmation, 'Confirmation' %>
+    <%= f.password_field :password_confirmation, class: "form-with-border" %>
+    <%= f.submit "Create my account", class: "signup-button" %>
     <% end %>
 </div>

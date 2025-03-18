@@ -5,6 +5,20 @@ main{
     height: 100%;
 
     .container{
+        .flash-success{
+            font-weight: 500;
+            padding: 20px 15px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            color: $dark-green;
+            background-color: $light-green;
+            border-radius: 10px;
+        }
+
+        .flash-danger{
+            color: red;
+        }
+
         @extend .container;
         .home{
             @extend .home;

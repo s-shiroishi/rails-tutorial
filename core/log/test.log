@@ -4347,3 +4347,1484 @@ Migrating to AddPasswordDigestToUsers (20250318013822)
   [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250318013822')[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('8082449325367450005')[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'USER@foo.COM' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'A_US-ER@foo.bar.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'first.last@foo.jp' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'alice+bob@baz.cn' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example,com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user_at_foo.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user.name@example.' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar_baz.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar+baz.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`) VALUES ('example', 'user@example.com', '2025-03-18 10:32:06.201117', '2025-03-18 10:32:06.201117', '$2a$04$UZwaRARIvAEnO.BLm8ZEAeE0i5suslBkj63yc.aaVS1KFVWuudlBK')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 19:32:06 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 589.6ms | Allocations: 41194)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 244)
+  Rendered layouts/_main.html.erb (Duration: 0.6ms | Allocations: 121)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 597.7ms | Allocations: 42931)
+Completed 200 OK in 606ms (Views: 601.5ms | ActiveRecord: 0.0ms | Allocations: 46398)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/about" for 127.0.0.1 at 2025-03-18 19:32:06 +0900
+Processing by StaticPagesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.7ms | Allocations: 121)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 834)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 1089)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/help" for 127.0.0.1 at 2025-03-18 19:32:06 +0900
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.6ms | Allocations: 109)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 822)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 1075)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/contact" for 127.0.0.1 at 2025-03-18 19:32:06 +0900
+Processing by StaticPagesController#contact as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.4ms | Allocations: 114)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 827)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 1080)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2025-03-18 19:32:06 +0900
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 213)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2088)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 60)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2793)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 3211)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 19:32:06 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 251)
+  Rendered layouts/_header.html.erb (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 951)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 1144)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 105)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 846)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.0ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 800)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.0ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 800)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 300)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1034)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'USER@foo.COM' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'A_US-ER@foo.bar.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'first.last@foo.jp' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'alice+bob@baz.cn' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example,com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user_at_foo.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user.name@example.' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar_baz.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar+baz.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`) VALUES ('example', 'user@example.com', '2025-03-18 10:40:02.975983', '2025-03-18 10:40:02.975983', '$2a$04$vj6/P1f2eIpXNlBlSI9jUuueLczC6M7xxlj77IdF6lhQajd0CLvfG')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 19:40:02 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 545.5ms | Allocations: 38461)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 244)
+  Rendered layouts/_main.html.erb (Duration: 0.3ms | Allocations: 121)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 550.0ms | Allocations: 40198)
+Completed 200 OK in 559ms (Views: 553.6ms | ActiveRecord: 0.0ms | Allocations: 43665)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/about" for 127.0.0.1 at 2025-03-18 19:40:03 +0900
+Processing by StaticPagesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.7ms | Allocations: 121)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 834)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 1089)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/help" for 127.0.0.1 at 2025-03-18 19:40:03 +0900
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.5ms | Allocations: 109)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 822)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 1075)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/contact" for 127.0.0.1 at 2025-03-18 19:40:03 +0900
+Processing by StaticPagesController#contact as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.5ms | Allocations: 114)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 827)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 1080)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2025-03-18 19:40:03 +0900
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 213)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2087)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 60)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2792)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 3210)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 19:40:03 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 251)
+  Rendered layouts/_header.html.erb (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 951)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 1144)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.3ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 106)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 847)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 800)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 800)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 300)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1034)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'USER@foo.COM' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'A_US-ER@foo.bar.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'first.last@foo.jp' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'alice+bob@baz.cn' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example,com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user_at_foo.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user.name@example.' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar_baz.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar+baz.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`) VALUES ('example', 'user@example.com', '2025-03-18 10:44:17.511067', '2025-03-18 10:44:17.511067', '$2a$04$kvTL8kFuhFgFSX5f/RbxzOpxnRpXY1gqepRInLpbMBiOxzSeoMx9K')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 19:44:17 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 448.8ms | Allocations: 38383)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 244)
+  Rendered layouts/_main.html.erb (Duration: 0.4ms | Allocations: 121)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 454.6ms | Allocations: 40120)
+Completed 200 OK in 463ms (Views: 458.4ms | ActiveRecord: 0.0ms | Allocations: 43587)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/about" for 127.0.0.1 at 2025-03-18 19:44:18 +0900
+Processing by StaticPagesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.8ms | Allocations: 121)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 834)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 1089)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/help" for 127.0.0.1 at 2025-03-18 19:44:18 +0900
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.7ms | Allocations: 109)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 822)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 1075)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/contact" for 127.0.0.1 at 2025-03-18 19:44:18 +0900
+Processing by StaticPagesController#contact as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.5ms | Allocations: 114)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 827)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 1080)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2025-03-18 19:44:18 +0900
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 213)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2087)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 60)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2792)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 3210)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 19:44:18 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 251)
+  Rendered layouts/_header.html.erb (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 951)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 1144)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.2ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 106)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 847)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 800)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 800)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 300)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1034)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'USER@foo.COM' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'A_US-ER@foo.bar.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'first.last@foo.jp' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'alice+bob@baz.cn' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example,com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user_at_foo.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user.name@example.' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar_baz.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar+baz.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`) VALUES ('example', 'user@example.com', '2025-03-18 10:46:24.914952', '2025-03-18 10:46:24.914952', '$2a$04$LuH/K.zJwL6v4mRolLnSiOfxzlw8YN1qi6rseGdowoD4D3/EedAgq')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 19:46:24 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 560.5ms | Allocations: 38521)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 244)
+  Rendered layouts/_main.html.erb (Duration: 0.3ms | Allocations: 121)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 565.2ms | Allocations: 40258)
+Completed 200 OK in 575ms (Views: 569.2ms | ActiveRecord: 0.0ms | Allocations: 43725)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/about" for 127.0.0.1 at 2025-03-18 19:46:25 +0900
+Processing by StaticPagesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.7ms | Allocations: 121)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 834)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 1089)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/help" for 127.0.0.1 at 2025-03-18 19:46:25 +0900
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.5ms | Allocations: 109)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 822)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 1075)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/contact" for 127.0.0.1 at 2025-03-18 19:46:25 +0900
+Processing by StaticPagesController#contact as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.5ms | Allocations: 114)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 827)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 1080)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2025-03-18 19:46:25 +0900
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 213)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2087)
+  Rendered layouts/_header.html.erb (Duration: 0.0ms | Allocations: 60)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2792)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 3210)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 19:46:25 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 251)
+  Rendered layouts/_header.html.erb (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 951)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 1144)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.2ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 106)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 847)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 800)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 800)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 300)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1034)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'USER@foo.COM' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'A_US-ER@foo.bar.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'first.last@foo.jp' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'alice+bob@baz.cn' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example,com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user_at_foo.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user.name@example.' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar_baz.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar+baz.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`) VALUES ('example', 'user@example.com', '2025-03-18 11:29:23.241147', '2025-03-18 11:29:23.241147', '$2a$04$OuREwYncnEoxjyjzEorgouZ8.XR83lXeuQDtLhmZs2s.n9zjIlJY.')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 20:29:23 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 679.6ms | Allocations: 45821)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 244)
+  Rendered layouts/_main.html.erb (Duration: 0.4ms | Allocations: 121)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 685.7ms | Allocations: 47560)
+Completed 200 OK in 695ms (Views: 690.4ms | ActiveRecord: 0.0ms | Allocations: 51027)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/about" for 127.0.0.1 at 2025-03-18 20:29:23 +0900
+Processing by StaticPagesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.5ms | Allocations: 121)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 836)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 1091)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/help" for 127.0.0.1 at 2025-03-18 20:29:23 +0900
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.6ms | Allocations: 109)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 824)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 1077)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/contact" for 127.0.0.1 at 2025-03-18 20:29:23 +0900
+Processing by StaticPagesController#contact as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.5ms | Allocations: 114)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 829)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 1082)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2025-03-18 20:29:23 +0900
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 213)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2086)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 60)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2793)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 3211)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 20:29:24 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 256)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 958)
+Completed 200 OK in 2ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 1151)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.0ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 106)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 849)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.0ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 802)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 802)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 300)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1036)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'USER@foo.COM' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'A_US-ER@foo.bar.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'first.last@foo.jp' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'alice+bob@baz.cn' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example,com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user_at_foo.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user.name@example.' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar_baz.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar+baz.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`) VALUES ('example', 'user@example.com', '2025-03-18 11:30:30.281410', '2025-03-18 11:30:30.281410', '$2a$04$EQcANTqYrjPbE8Y4LaZmeeekqxx1rOY41ab60qtg7OPlOasZ665M6')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 20:30:30 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 503.0ms | Allocations: 41512)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 244)
+  Rendered layouts/_main.html.erb (Duration: 0.7ms | Allocations: 121)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 510.8ms | Allocations: 43251)
+Completed 200 OK in 521ms (Views: 515.3ms | ActiveRecord: 0.0ms | Allocations: 46718)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/about" for 127.0.0.1 at 2025-03-18 20:30:30 +0900
+Processing by StaticPagesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.7ms | Allocations: 121)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 836)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 1091)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/help" for 127.0.0.1 at 2025-03-18 20:30:30 +0900
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.5ms | Allocations: 109)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 824)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 1077)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/contact" for 127.0.0.1 at 2025-03-18 20:30:30 +0900
+Processing by StaticPagesController#contact as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.5ms | Allocations: 114)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 829)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 1082)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2025-03-18 20:30:30 +0900
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 213)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2086)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 60)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 2793)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 3211)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 20:30:30 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 256)
+  Rendered layouts/_header.html.erb (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 958)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 1151)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.0ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 108)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 860)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.0ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 802)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 802)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 300)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1036)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'USER@foo.COM' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'A_US-ER@foo.bar.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'first.last@foo.jp' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'alice+bob@baz.cn' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example,com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user_at_foo.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user.name@example.' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar_baz.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar+baz.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`) VALUES ('example', 'user@example.com', '2025-03-18 11:31:21.962197', '2025-03-18 11:31:21.962197', '$2a$04$r/UqfzwJqprQwHXckZDwQudh.QXtcRJuV8nATSMoHQkeGBHbJT2Vq')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 20:31:21 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 515.4ms | Allocations: 41668)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 244)
+  Rendered layouts/_main.html.erb (Duration: 0.4ms | Allocations: 121)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 520.1ms | Allocations: 43407)
+Completed 200 OK in 529ms (Views: 524.2ms | ActiveRecord: 0.0ms | Allocations: 46874)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/about" for 127.0.0.1 at 2025-03-18 20:31:22 +0900
+Processing by StaticPagesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.5ms | Allocations: 121)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 836)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 1091)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/help" for 127.0.0.1 at 2025-03-18 20:31:22 +0900
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.4ms | Allocations: 109)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 824)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 1077)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/contact" for 127.0.0.1 at 2025-03-18 20:31:22 +0900
+Processing by StaticPagesController#contact as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.5ms | Allocations: 114)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 829)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 1082)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2025-03-18 20:31:22 +0900
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 213)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2086)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 60)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2793)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 3211)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 20:31:22 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 256)
+  Rendered layouts/_header.html.erb (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 958)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 1151)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.0ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 108)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 860)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.0ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 802)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.0ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 802)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 300)
+  Rendered layouts/_header.html.erb (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1036)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'USER@foo.COM' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'A_US-ER@foo.bar.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'first.last@foo.jp' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'alice+bob@baz.cn' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example,com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user_at_foo.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user.name@example.' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar_baz.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar+baz.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`) VALUES ('example', 'user@example.com', '2025-03-18 11:31:41.482526', '2025-03-18 11:31:41.482526', '$2a$04$08RQnCVCQeKI7CtaNdURa.MYB2wujq.OTo/yJYx2bXQAi304x4tV6')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 20:31:41 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 507.4ms | Allocations: 41769)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 244)
+  Rendered layouts/_main.html.erb (Duration: 0.6ms | Allocations: 121)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 514.7ms | Allocations: 43508)
+Completed 200 OK in 524ms (Views: 518.4ms | ActiveRecord: 0.0ms | Allocations: 46975)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/about" for 127.0.0.1 at 2025-03-18 20:31:42 +0900
+Processing by StaticPagesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.7ms | Allocations: 121)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 836)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 1091)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/help" for 127.0.0.1 at 2025-03-18 20:31:42 +0900
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.5ms | Allocations: 109)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 824)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 1077)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/contact" for 127.0.0.1 at 2025-03-18 20:31:42 +0900
+Processing by StaticPagesController#contact as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.4ms | Allocations: 114)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 829)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 1082)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2025-03-18 20:31:42 +0900
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 213)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2086)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 60)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2793)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 3211)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 20:31:42 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 256)
+  Rendered layouts/_header.html.erb (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 958)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 1151)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 108)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 860)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.0ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 802)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 802)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 300)
+  Rendered layouts/_header.html.erb (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1036)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (15.8ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (5.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (4.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'USER@foo.COM' LIMIT 1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'A_US-ER@foo.bar.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'first.last@foo.jp' LIMIT 1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'alice+bob@baz.cn' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example,com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user_at_foo.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user.name@example.' LIMIT 1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar_baz.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar+baz.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Create (2.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`) VALUES ('example', 'user@example.com', '2025-03-18 11:36:55.298794', '2025-03-18 11:36:55.298794', '$2a$04$rCjeduiYqQkqwXgDHSflT.LpW7G8YYUHcgdV2nN7oQZXG3RCpbbsi')[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (144.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 20:36:55 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2110.6ms | Allocations: 41844)
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | Allocations: 244)
+  Rendered layouts/_main.html.erb (Duration: 1.4ms | Allocations: 121)
+  Rendered layouts/_footer.html.erb (Duration: 2.1ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 2136.6ms | Allocations: 43583)
+Completed 200 OK in 2161ms (Views: 2147.0ms | ActiveRecord: 0.0ms | Allocations: 47050)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/about" for 127.0.0.1 at 2025-03-18 20:36:57 +0900
+Processing by StaticPagesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 2.8ms | Allocations: 121)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 836)
+Completed 200 OK in 13ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 1091)
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/help" for 127.0.0.1 at 2025-03-18 20:36:57 +0900
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 1.1ms | Allocations: 109)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 824)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 1077)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/contact" for 127.0.0.1 at 2025-03-18 20:36:57 +0900
+Processing by StaticPagesController#contact as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.9ms | Allocations: 114)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 829)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 1082)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2025-03-18 20:36:57 +0900
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 213)
+  Rendered users/new.html.erb within layouts/application (Duration: 21.0ms | Allocations: 2086)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 60)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 2793)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.0ms | Allocations: 3211)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 20:36:57 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 256)
+  Rendered layouts/_header.html.erb (Duration: 0.0ms | Allocations: 61)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 958)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 1151)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 1.7ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 108)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 860)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 802)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 85)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 802)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 300)
+  Rendered layouts/_header.html.erb (Duration: 0.0ms | Allocations: 62)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 49)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1036)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (5.8ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'USER@foo.COM' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'A_US-ER@foo.bar.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'first.last@foo.jp' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'alice+bob@baz.cn' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example,com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user_at_foo.org' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user.name@example.' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar_baz.com' LIMIT 1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'foo@bar+baz.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`) VALUES ('example', 'user@example.com', '2025-03-18 11:44:11.897953', '2025-03-18 11:44:11.897953', '$2a$04$jdxmH1GgCOj65wwYdgoYnerFPbnRpDvhQ4h7s7ov8ofiytdZ3mTwq')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'user@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 20:44:11 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 647.1ms | Allocations: 41890)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 244)
+  Rendered layouts/_main.html.erb (Duration: 0.7ms | Allocations: 121)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 653.8ms | Allocations: 43629)
+Completed 200 OK in 663ms (Views: 658.5ms | ActiveRecord: 0.0ms | Allocations: 47096)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/about" for 127.0.0.1 at 2025-03-18 20:44:12 +0900
+Processing by StaticPagesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 0.7ms | Allocations: 121)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 836)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 1091)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/help" for 127.0.0.1 at 2025-03-18 20:44:12 +0900
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.6ms | Allocations: 109)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 824)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 1077)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/contact" for 127.0.0.1 at 2025-03-18 20:44:12 +0900
+Processing by StaticPagesController#contact as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (Duration: 0.6ms | Allocations: 114)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 829)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 1082)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Started GET "/signup" for 127.0.0.1 at 2025-03-18 20:44:12 +0900
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 213)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2086)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 60)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 2793)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 3211)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2025-03-18 20:44:12 +0900
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 251)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 953)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 1146)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m

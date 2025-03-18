@@ -1,0 +1,22 @@
+@import '../variables';
+
+.error_messages{
+    .error_title{
+        font-weight: 500;
+        padding: 20px 15px;
+        margin-bottom: 20px;
+        color: $dark-pink;
+        background-color: $light-pink;
+        border: 1px solid $dark-pink;
+        border-radius: 10px;
+    }
+    ul{
+        padding-left: 40px;
+        color: $red;
+        list-style-type: disc;
+        li{
+            font-weight: 300;
+            padding-bottom: 5px;
+        }
+    }
+}
