@@ -5598,3 +5598,16 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 17ms (Views: 12.1ms | ActiveRecord: 0.9ms | Allocations: 2514)
 
 
+Started GET "/" for 192.168.65.1 at 2025-03-18 21:17:33 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 7.2ms | Allocations: 725)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 61)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 2503)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 2942)
+
+
