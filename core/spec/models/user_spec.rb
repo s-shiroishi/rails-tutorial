@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe "属性検証" do
-    let(:user){User.new(name: "example", email: "user@example.com", password: "password", password_confirmation: "password")}
-
+    subject(:user) { User.new(name: "example", email: "user@example.com", password: "password", password_confirmation: "password") }
     describe "name" do
       describe "存在検証" do
         it "nameが空の場合は無効であること" do
