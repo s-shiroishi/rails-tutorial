@@ -1,0 +1,39 @@
+@import '../variables';
+@import '../shared/form_container';
+@import '../shared/form';
+@import '../shared/form_title';
+@import '../shared/form_with_border';
+@import '../shared/form_button';
+
+.login-form-container{
+    @extend .form-container;
+
+    .form-title{
+        @extend .form-title;
+    }
+
+    .form{
+        @extend .form;
+
+        .form-with-border{
+            @extend .form-with-border;
+        }
+
+        .form-button{
+            @extend .form-button;
+        }
+    }
+
+    p{
+        width: 100%;
+        margin-top: 10px;
+        text-align: left;
+
+        span{
+            margin-right: 10px;
+        }
+        a{
+            color: $light-blue;
+        }
+    }
+}

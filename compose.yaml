@@ -13,6 +13,7 @@ services:
       - '3306:3306'
   web:
     build: .
+    container_name: web-container
     working_dir: /core
     command: bash -c "rm -f tmp/pids/server.pid && bin/rails server -b 0.0.0.0 -p 3000"
     volumes:
@@ -28,11 +29,6 @@ services:
     environment:
       MYSQL_PASSWORD: password
       TZ: "Asia/Tokyo"
-  webdriver_chrome:
-    image: selenium/standalone-chrome
-    platform: linux/amd64
-    ports:
-      - "4444:4444"
 volumes:
   gemdata:
   node_modules:

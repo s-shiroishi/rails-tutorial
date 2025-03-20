@@ -1,0 +1,11 @@
+@import '../variables';
+
+.form-button{
+    text-align: center;
+    padding: 15px 30px;
+    background-color: $light-blue;
+    border-radius: 5px;
+    color: $white;
+    font-weight: 300;
+    cursor: pointer;
+}

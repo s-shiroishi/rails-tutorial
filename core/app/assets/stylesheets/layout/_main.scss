@@ -1,6 +1,8 @@
 @import 'layout';
 @import '../page/home';
 @import '../page/signup';
+@import '../page/login';
+
 main{
     height: 100%;
 
@@ -16,15 +18,27 @@ main{
         }
 
         .flash-danger{
-            color: red;
+            font-weight: 500;
+            padding: 20px 15px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            color: $dark-pink;
+            background-color: $light-pink;
+            border: 1px solid $dark-pink;
+            border-radius: 10px;
         }
 
         @extend .container;
         .home{
             @extend .home;
         }
-        .signup-form-container{
-            @extend .signup-form-container;
-            } 
+
+        .singup-form-container{
+            @extend .singup-form-container;
+            }
+
+        .login-form-container{
+            @extend .login-form-container;
+            }
     }
 }

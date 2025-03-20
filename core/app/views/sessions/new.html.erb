@@ -1,0 +1,13 @@
+<%= provide(:title, 'Login') %>
+
+<div class='login-form-container'>
+    <h2 class='form-title'>Log in</h2>
+    <%= form_with(url: login_path, scope: :session, html: { class: 'form' }) do |f|%>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-with-border" %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-with-border" %>
+    <%= f.submit "Log in", class: "form-button" %>
+    <% end %>
+    <p><span>New user？</span><%= link_to "Sign up now!", signup_path %></p>
+</div>
