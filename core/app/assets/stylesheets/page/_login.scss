@@ -16,10 +16,17 @@
         @extend .form;
 
         .form-with-border{
+            font-weight: 400;
             @extend .form-with-border;
         }
 
+        .checkbox{
+            color: $dark-gray;
+            font-size: small
+        }
+
         .form-button{
+            margin-top: 20px;
             @extend .form-button;
         }
     }

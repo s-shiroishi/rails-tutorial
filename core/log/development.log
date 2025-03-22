@@ -8683,3 +8683,1878 @@ Processing by StaticPagesController#home as TURBO_STREAM
 Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 3381)
 
 
+Started GET "/signup" for 192.168.65.1 at 2025-03-20 19:59:24 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 215)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1838)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 68)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 3963)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 4299)
+
+
+Started POST "/users" for 192.168.65.1 at 2025-03-20 19:59:33 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"foobar", "email"=>"sugu0114e0114@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'sugu0114e0114@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `created_at`, `updated_at`, `password_digest`) VALUES ('foobar', 'sugu0114e0114@gmail.com', '2025-03-20 10:59:34.080231', '2025-03-20 10:59:34.080231', '$2a$12$z5bfkdazvf1Q3M3ONII5S.lGlQrp6ysMOni9pgrKSWTf6kOiFwdYK')[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+Redirected to http://localhost:3000/users/14
+Completed 302 Found in 254ms (ActiveRecord: 5.7ms | Allocations: 4183)
+
+
+Started GET "/users/14" for 192.168.65.1 at 2025-03-20 19:59:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 563)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 135)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2759)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 3377)
+
+
+Started GET "/help" for 192.168.65.1 at 2025-03-20 19:59:41 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 1.2ms | Allocations: 111)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 82)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 2489)
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 2784)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 19:59:42 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 4.5ms | Allocations: 568)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 2793)
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 3026)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 19:59:46 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 4.0ms | Allocations: 562)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 2784)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 3016)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-20 19:59:46 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 557)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 2696)
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 2929)
+
+
+Started POST "/login" for 192.168.65.1 at 2025-03-20 19:59:54 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"sugu01140114@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sugu01140114@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 242ms (ActiveRecord: 0.9ms | Allocations: 794)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-20 19:59:55 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 541)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 135)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2733)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 3351)
+
+
+Started DELETE "/logout?_method=delete" for 192.168.65.1 at 2025-03-20 20:00:07 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#destroy as TURBO_STREAM
+Redirected to http://localhost:3000/
+Completed 303 See Other in 4ms (ActiveRecord: 0.0ms | Allocations: 357)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 20:00:07 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.0ms | Allocations: 567)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 2772)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 3007)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-20 20:01:14 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 554)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 2680)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 2912)
+
+
+Started POST "/login" for 192.168.65.1 at 2025-03-20 20:01:19 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"sugu01140114@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sugu01140114@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 240ms (ActiveRecord: 2.2ms | Allocations: 797)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-20 20:01:19 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 535)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 135)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2758)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.3ms | Allocations: 3378)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 20:01:21 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.8ms | Allocations: 568)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 2799)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 3032)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-20 20:01:29 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 566)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 2699)
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 2931)
+
+
+Started GET "/about" for 192.168.65.1 at 2025-03-20 20:02:51 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (Duration: 1.5ms | Allocations: 113)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 82)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 2455)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 2749)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-20 20:03:02 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 566)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 2692)
+Completed 200 OK in 20ms (Views: 17.3ms | ActiveRecord: 0.0ms | Allocations: 2924)
+
+
+Started POST "/login" for 192.168.65.1 at 2025-03-20 20:03:09 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"sugu01140114@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sugu01140114@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 360)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2476)
+Completed 422 Unprocessable Content in 257ms (Views: 7.6ms | ActiveRecord: 1.5ms | Allocations: 3374)
+
+
+Started POST "/login" for 192.168.65.1 at 2025-03-20 20:03:22 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"sugu01140114@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sugu01140114@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 254ms (ActiveRecord: 0.7ms | Allocations: 810)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-20 20:03:22 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 538)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 135)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2730)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.3ms | Allocations: 3348)
+
+
+Started GET "/help" for 192.168.65.1 at 2025-03-20 20:03:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 82)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 2351)
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 2584)
+
+
+Started GET "/help" for 192.168.65.1 at 2025-03-20 20:03:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 82)
+  Rendered layouts/_main.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 2388)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 2622)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 20:03:35 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.5ms | Allocations: 568)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 2792)
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 3025)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 20:03:36 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 4.6ms | Allocations: 564)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 2819)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 3051)
+
+
+Started GET "/help" for 192.168.65.1 at 2025-03-20 20:03:36 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.0ms | Allocations: 10)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 82)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2336)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 2568)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 20:03:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.3ms | Allocations: 562)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2774)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 3006)
+
+
+Started GET "/help" for 192.168.65.1 at 2025-03-20 20:03:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.0ms | Allocations: 10)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 82)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 2354)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 2586)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 20:03:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.2ms | Allocations: 562)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 2777)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 3009)
+
+
+Started GET "/help" for 192.168.65.1 at 2025-03-20 20:03:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.0ms | Allocations: 10)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 82)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 2357)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 2589)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 20:03:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.3ms | Allocations: 562)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 2768)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 3000)
+
+
+Started GET "/help" for 192.168.65.1 at 2025-03-20 20:03:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 82)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2394)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 2628)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 20:03:39 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.7ms | Allocations: 569)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 2791)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 3023)
+
+
+Started GET "/help" for 192.168.65.1 at 2025-03-20 20:03:40 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.2ms | Allocations: 10)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 82)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 2370)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 2603)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 20:03:40 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.9ms | Allocations: 564)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 2781)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 3014)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-20 20:16:05 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 935)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 364)
+  Rendered layouts/_main.html.erb (Duration: 0.9ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 200)
+  Rendered layout layouts/application.html.erb (Duration: 37.9ms | Allocations: 12636)
+Completed 200 OK in 45ms (Views: 41.0ms | ActiveRecord: 0.0ms | Allocations: 13702)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-20 20:16:08 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 587)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 2726)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 0.0ms | Allocations: 2959)
+
+
+Started POST "/login" for 192.168.65.1 at 2025-03-20 20:16:14 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"sugu01140114@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sugu01140114@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 264ms (ActiveRecord: 6.2ms | Allocations: 4744)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-20 20:16:15 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 693)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 151)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 2990)
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 0.4ms | Allocations: 4394)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 20:16:17 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 7.2ms | Allocations: 713)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 123)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 2798)
+Completed 200 OK in 115278ms (Views: 22.6ms | ActiveRecord: 1.7ms | Allocations: 195154)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-20 20:18:21 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 554)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 135)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 2743)
+Completed 200 OK in 19ms (Views: 13.3ms | ActiveRecord: 0.8ms | Allocations: 3358)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 20:18:23 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 12.8ms | Allocations: 578)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.3ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 2842)
+Completed 200 OK in 14783ms (Views: 38.8ms | ActiveRecord: 0.0ms | Allocations: 44119)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 20:18:54 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.8ms | Allocations: 768)
+  Rendered layouts/_header.html.erb (Duration: 3.1ms | Allocations: 366)
+  Rendered layouts/_main.html.erb (Duration: 0.6ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 200)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 12565)
+Completed 200 OK in 33ms (Views: 28.8ms | ActiveRecord: 0.0ms | Allocations: 13632)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-20 20:18:58 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 874)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 3004)
+Completed 200 OK in 21ms (Views: 17.5ms | ActiveRecord: 0.0ms | Allocations: 3443)
+
+
+Started POST "/login" for 192.168.65.1 at 2025-03-20 20:19:13 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"sugu01140114@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sugu01140114@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 243ms (ActiveRecord: 10.5ms | Allocations: 5018)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-20 20:19:13 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 718)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 461)
+  Rendered layouts/_main.html.erb (Duration: 0.7ms | Allocations: 205)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 202)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 12612)
+Completed 200 OK in 27ms (Views: 22.8ms | ActiveRecord: 0.3ms | Allocations: 14639)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 20:19:26 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 10.1ms | Allocations: 716)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 71)
+  Rendered layouts/_main.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 2944)
+Completed 200 OK in 135911ms (Views: 38.2ms | ActiveRecord: 0.0ms | Allocations: 68455)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 20:21:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.0ms | Allocations: 781)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 446)
+  Rendered layouts/_main.html.erb (Duration: 0.7ms | Allocations: 205)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 202)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 12474)
+Completed 200 OK in 34ms (Views: 23.5ms | ActiveRecord: 2.6ms | Allocations: 18696)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-20 20:21:53 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 699)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 141)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 2908)
+Completed 200 OK in 22ms (Views: 15.9ms | ActiveRecord: 0.8ms | Allocations: 3731)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 20:21:57 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 4.2ms | Allocations: 562)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 122)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 2630)
+Completed 200 OK in 20ms (Views: 13.5ms | ActiveRecord: 0.7ms | Allocations: 3453)
+
+
+Started DELETE "/logout?_method=delete" for 192.168.65.1 at 2025-03-20 20:22:01 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#destroy as TURBO_STREAM
+Redirected to http://localhost:3000/
+Completed 303 See Other in 3ms (ActiveRecord: 0.0ms | Allocations: 427)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 20:22:01 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.3ms | Allocations: 563)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 71)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 2627)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 3099)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 23:35:42 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.5ms | Allocations: 781)
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 375)
+  Rendered layouts/_main.html.erb (Duration: 0.8ms | Allocations: 205)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 202)
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 12581)
+Completed 200 OK in 34ms (Views: 30.8ms | ActiveRecord: 0.0ms | Allocations: 13652)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-20 23:35:45 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 870)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 73)
+  Rendered layouts/_main.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 3004)
+Completed 200 OK in 21ms (Views: 17.5ms | ActiveRecord: 0.0ms | Allocations: 3444)
+
+
+Started POST "/login" for 192.168.65.1 at 2025-03-20 23:35:57 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"sugu011401144@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sugu011401144@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 360)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 72)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 2522)
+Completed 422 Unprocessable Content in 48ms (Views: 13.1ms | ActiveRecord: 8.0ms | Allocations: 4867)
+
+
+Started POST "/login" for 192.168.65.1 at 2025-03-20 23:36:06 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"sugu01140114@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sugu01140114@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 246ms (ActiveRecord: 1.1ms | Allocations: 3321)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-20 23:36:07 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 686)
+  Rendered layouts/_header.html.erb (Duration: 4.1ms | Allocations: 154)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 2.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 2913)
+Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 0.3ms | Allocations: 4272)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 23:36:09 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.1ms | Allocations: 571)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 510)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 3222)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.3ms | Allocations: 3455)
+
+
+Started GET "/help" for 192.168.65.1 at 2025-03-20 23:36:14 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#help as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (Duration: 0.7ms | Allocations: 111)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.6ms | Allocations: 523)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 2902)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.5ms | Allocations: 3194)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-20 23:36:15 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:8:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 575)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 138)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 2767)
+Completed 200 OK in 20ms (Views: 13.9ms | ActiveRecord: 1.0ms | Allocations: 3382)
+
+
+Started DELETE "/logout?_method=delete" for 192.168.65.1 at 2025-03-20 23:36:18 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#destroy as TURBO_STREAM
+Redirected to http://localhost:3000/
+Completed 303 See Other in 5ms (ActiveRecord: 0.0ms | Allocations: 395)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-20 23:36:18 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.4ms | Allocations: 563)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 72)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 2784)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 3019)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('823569496780591680', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to AddRememberDigestToUsers (20250322063604)
+  [1m[35m (12.9ms)[0m  [1m[35mALTER TABLE `users` ADD `remember_digest` varchar(255)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20250322063604')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('823569496780591680')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` /* loading for pp */ LIMIT 11[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (2.6ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2025-03-22 06:46:41.005667', `users`.`remember_digest` = '$2a$12$SQs7qnqLDpGegBNmmFY/S.F1g/8ggh4s5.9NVEe8ynyz7yNRX2CXa' WHERE `users`.`id` = 13[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:06:12 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 554.8ms | Allocations: 34596)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 412)
+  Rendered layouts/_main.html.erb (Duration: 0.4ms | Allocations: 233)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 578.4ms | Allocations: 47812)
+Completed 200 OK in 899ms (Views: 582.2ms | ActiveRecord: 0.0ms | Allocations: 333208)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:06:14 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 1704)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 76)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 3841)
+Completed 200 OK in 27ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 4286)
+
+
+Started POST "/login" for 192.168.65.1 at 2025-03-22 16:06:26 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"sugu01140114@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sugu01140114@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:23:in `remember'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2025-03-22 07:06:26.754372', `users`.`remember_digest` = '$2a$12$x15AkrH8BUMuz3OWmzJEY.Cxk7ZmFLAVMiKvtDqEqen2X0qU5Kt.q' WHERE `users`.`id` = 13[0m
+  ↳ app/models/user.rb:23:in `remember'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:23:in `remember'
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 492ms (ActiveRecord: 5.1ms | Allocations: 18978)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-22 16:06:26 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 778)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 163)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3090)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.3ms | Allocations: 4515)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:06:29 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 4.7ms | Allocations: 568)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 4.8ms | Allocations: 516)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 3243)
+Completed 200 OK in 26ms (Views: 21.0ms | ActiveRecord: 1.2ms | Allocations: 3477)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:06:30 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.6ms | Allocations: 562)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 3.3ms | Allocations: 512)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 3260)
+Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 0.8ms | Allocations: 3492)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-22 16:06:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 592)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 138)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 2784)
+Completed 200 OK in 17ms (Views: 11.8ms | ActiveRecord: 0.8ms | Allocations: 3411)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:06:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.9ms | Allocations: 562)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 516)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 3246)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.3ms | Allocations: 3478)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-22 16:06:42 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 597)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 138)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 2789)
+Completed 200 OK in 19ms (Views: 13.3ms | ActiveRecord: 0.8ms | Allocations: 3405)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-22 16:14:52 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 753)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 476)
+  Rendered layouts/_main.html.erb (Duration: 0.5ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 200)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 12606)
+Completed 200 OK in 30ms (Views: 20.9ms | ActiveRecord: 0.4ms | Allocations: 18741)
+
+
+Started DELETE "/logout?_method=delete" for 192.168.65.1 at 2025-03-22 16:15:10 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31:in `forget'
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2025-03-22 07:15:10.657021', `users`.`remember_digest` = NULL WHERE `users`.`id` = 13[0m
+  ↳ app/models/user.rb:31:in `forget'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31:in `forget'
+Redirected to http://localhost:3000/
+Completed 303 See Other in 18ms (ActiveRecord: 6.0ms | Allocations: 2347)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:15:10 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.2ms | Allocations: 713)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 80)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 2990)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 3476)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:15:19 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 867)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 76)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 3004)
+Completed 200 OK in 20ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 3413)
+
+
+Started POST "/login" for 192.168.65.1 at 2025-03-22 16:15:27 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"sugu01140114@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sugu01140114@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:23:in `remember'
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2025-03-22 07:15:28.136128', `users`.`remember_digest` = '$2a$12$pmdPhmnhGP90pheeaeyTHe4s3/sSsaIytfOTndsOz69PGRs92vGDy' WHERE `users`.`id` = 13[0m
+  ↳ app/models/user.rb:23:in `remember'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:23:in `remember'
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 464ms (ActiveRecord: 3.5ms | Allocations: 2569)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-22 16:15:28 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 563)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 138)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2789)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 3409)
+
+
+Started DELETE "/logout?_method=delete" for 192.168.65.1 at 2025-03-22 16:23:42 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32:in `forget'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2025-03-22 07:23:42.444653', `users`.`remember_digest` = NULL WHERE `users`.`id` = 13[0m
+  ↳ app/models/user.rb:32:in `forget'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32:in `forget'
+Redirected to http://localhost:3000/
+Completed 303 See Other in 13ms (ActiveRecord: 2.4ms | Allocations: 7051)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:23:42 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.2ms | Allocations: 774)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 378)
+  Rendered layouts/_main.html.erb (Duration: 0.6ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 12610)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.0ms | Allocations: 13716)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:23:44 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 891)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 76)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 3058)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 3469)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:25:31 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1660)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1763)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2869)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= provide(:title, 'Login') %>
+
+<div class='login-form-container'>
+    <h2 class='form-title'>Log in</h2>
+    <%= form_with(url: login_path, scope: :session, html: { class: 'form' }) do |f|%>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-with-border" %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-with-border" %>
+    <%= f.label :remember_me end%>
+    <%= f.check_box :remember_me%>
+    <span>Remember me on this computer</span>
+    <%end%>
+    <%= f.submit "Log in", class: "form-button" %>
+    <% end %>
+    <p><span>New user？</span><%= link_to "Sign up now!", signup_path %></p>
+</div>
+):
+1:    <%= provide(:title, 'Login') %>
+2:    
+3:    <div class='login-form-container'>
+4:        <h2 class='form-title'>Log in</h2>
+5:        <%= form_with(url: login_path, scope: :session, html: { class: 'form' }) do |f|%>
+6:        <%= f.label :email %>
+7:        <%= f.email_field :email, class: "form-with-border" %>
+8:        <%= f.label :password %>
+9:        <%= f.password_field :password, class: "form-with-border" %>
+10:        <%= f.label :remember_me end%>
+11:        <%= f.check_box :remember_me%>
+12:        <span>Remember me on this computer</span>
+13:        <%end%>
+14:        <%= f.submit "Log in", class: "form-button" %>
+15:        <% end %>
+16:        <p><span>New user？</span><%= link_to "Sign up now!", signup_path %></p>
+17:    </div>
+  
+app/views/sessions/new.html.erb:10: syntax error, unexpected `end', expecting ')'
+app/views/sessions/new.html.erb:19: syntax error, unexpected `end'
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:26:33 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.3ms | Allocations: 774)
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 378)
+  Rendered layouts/_main.html.erb (Duration: 0.5ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 200)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 12588)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 13655)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:26:35 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 1448)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 76)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 3585)
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.0ms | Allocations: 4023)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:26:54 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1064)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 376)
+  Rendered layouts/_main.html.erb (Duration: 0.5ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 200)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 12806)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.0ms | Allocations: 13873)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:29:32 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1048)
+  Rendered layouts/_header.html.erb (Duration: 0.6ms | Allocations: 376)
+  Rendered layouts/_main.html.erb (Duration: 0.3ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 200)
+  Rendered layout layouts/application.html.erb (Duration: 92.2ms | Allocations: 19925)
+Completed 200 OK in 96ms (Views: 93.8ms | ActiveRecord: 0.0ms | Allocations: 20988)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:29:38 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 644)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 75)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 87.9ms | Allocations: 9777)
+Completed 200 OK in 90ms (Views: 88.8ms | ActiveRecord: 0.0ms | Allocations: 10009)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:29:45 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 644)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 75)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 85.0ms | Allocations: 9781)
+Completed 200 OK in 87ms (Views: 85.8ms | ActiveRecord: 0.0ms | Allocations: 10013)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:29:55 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 638)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 75)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 92.7ms | Allocations: 9795)
+Completed 200 OK in 95ms (Views: 93.3ms | ActiveRecord: 0.0ms | Allocations: 10027)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:30:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 650)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 75)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 90.9ms | Allocations: 9787)
+Completed 200 OK in 93ms (Views: 91.9ms | ActiveRecord: 0.0ms | Allocations: 10019)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:30:49 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 653)
+  Rendered layout layouts/application.html.erb (Duration: 71.3ms | Allocations: 8128)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 0.0ms | Allocations: 8373)
+
+
+  
+ActionView::Template::Error (Error: Invalid CSS after "...ont-weight: 400": expected expression (e.g. 1px, bold), was "@extend .form-with-"
+        on line 20:13 of app/assets/stylesheets/layout/../page/_login.scss
+        from line 4:1 of app/assets/stylesheets/layout/_main.scss
+        from line 2:1 of app/assets/stylesheets/application.scss
+>>             @extend .form-with-border;
+
+   ------------^
+):
+     8:     <%= csp_meta_tag %>
+     9: 
+    10:     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
+    11:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    12:     <%= javascript_importmap_tags %>
+    13: </head>
+    14: 
+  
+app/views/layouts/application.html.erb:11
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:30:56 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 653)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 75)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 103.2ms | Allocations: 9826)
+Completed 200 OK in 107ms (Views: 104.7ms | ActiveRecord: 0.0ms | Allocations: 10058)
+
+
+Started POST "/login" for 192.168.65.1 at 2025-03-22 16:31:07 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"sugu01140114@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sugu01140114@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:23:in `remember'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2025-03-22 07:31:08.023376', `users`.`remember_digest` = '$2a$12$IxHEm640oLxm2ftmDdmnnurO4BufpbEiZAszYf0hQdlxqYOsjBmpq' WHERE `users`.`id` = 13[0m
+  ↳ app/models/user.rb:23:in `remember'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:23:in `remember'
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 477ms (ActiveRecord: 6.9ms | Allocations: 9327)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-22 16:31:08 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 744)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 154)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3014)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 4418)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:31:09 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 4.0ms | Allocations: 711)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.7ms | Allocations: 509)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 3423)
+Completed 200 OK in 17ms (Views: 13.6ms | ActiveRecord: 0.7ms | Allocations: 3864)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:31:13 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.6ms | Allocations: 562)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 508)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 3256)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.3ms | Allocations: 3488)
+
+
+Started DELETE "/logout?_method=delete" for 192.168.65.1 at 2025-03-22 16:31:21 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32:in `forget'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2025-03-22 07:31:21.100897', `users`.`remember_digest` = NULL WHERE `users`.`id` = 13[0m
+  ↳ app/models/user.rb:32:in `forget'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32:in `forget'
+Redirected to http://localhost:3000/
+Completed 303 See Other in 15ms (ActiveRecord: 4.6ms | Allocations: 2179)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:31:21 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.1ms | Allocations: 572)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 75)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 2814)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 3049)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:33:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1052)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 376)
+  Rendered layouts/_main.html.erb (Duration: 0.6ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 12773)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 13840)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:33:35 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 647)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 75)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 2779)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 3011)
+
+
+Started POST "/login" for 192.168.65.1 at 2025-03-22 16:33:44 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"sugu01140114@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sugu01140114@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 248ms (ActiveRecord: 4.0ms | Allocations: 5456)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-22 16:33:44 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 696)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 154)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2996)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.3ms | Allocations: 4402)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:33:48 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.1ms | Allocations: 712)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 508)
+  Rendered layouts/_main.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 3384)
+Completed 200 OK in 16ms (Views: 11.8ms | ActiveRecord: 0.3ms | Allocations: 3824)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:34:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.3ms | Allocations: 562)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 507)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 3212)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.3ms | Allocations: 3444)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:34:21 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.9ms | Allocations: 562)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 3.3ms | Allocations: 507)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 3207)
+Completed 200 OK in 18ms (Views: 14.8ms | ActiveRecord: 0.8ms | Allocations: 3439)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:34:54 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.7ms | Allocations: 562)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 507)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 3212)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.3ms | Allocations: 3444)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-22 16:35:03 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 566)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 138)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 2788)
+Completed 200 OK in 20ms (Views: 14.4ms | ActiveRecord: 0.8ms | Allocations: 3404)
+
+
+Started DELETE "/logout?_method=delete" for 192.168.65.1 at 2025-03-22 16:35:21 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+Redirected to http://localhost:3000/
+Completed 303 See Other in 7ms (ActiveRecord: 0.8ms | Allocations: 830)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:35:21 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 4.0ms | Allocations: 569)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 75)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 2797)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 3032)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:35:24 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 644)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 75)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 2776)
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 3008)
+
+
+Started POST "/login" for 192.168.65.1 at 2025-03-22 16:35:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"sugu01140114@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sugu01140114@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:23:in `remember'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2025-03-22 07:35:34.719686', `users`.`remember_digest` = '$2a$12$S1i9E8V9JxRiTp4dH1FrEOg/8Rt8Axjs454HmZImIZ78N3INBhD5O' WHERE `users`.`id` = 13[0m
+  ↳ app/models/user.rb:23:in `remember'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:23:in `remember'
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 474ms (ActiveRecord: 4.7ms | Allocations: 2472)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-22 16:35:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 578)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 138)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2773)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.4ms | Allocations: 3392)
+
+
+Started DELETE "/logout?_method=delete" for 192.168.65.1 at 2025-03-22 16:35:40 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32:in `forget'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2025-03-22 07:35:40.677626', `users`.`remember_digest` = NULL WHERE `users`.`id` = 13[0m
+  ↳ app/models/user.rb:32:in `forget'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32:in `forget'
+Redirected to http://localhost:3000/
+Completed 303 See Other in 17ms (ActiveRecord: 5.1ms | Allocations: 2194)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:35:40 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.2ms | Allocations: 563)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 75)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 2777)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 3012)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:36:01 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 635)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 75)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 2797)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 3030)
+
+
+Started POST "/login" for 192.168.65.1 at 2025-03-22 16:36:12 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"sugu01140114@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sugu01140114@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 245ms (ActiveRecord: 0.8ms | Allocations: 888)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-22 16:36:12 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 550)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 138)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2759)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 3377)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:36:23 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 3.4ms | Allocations: 568)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 507)
+  Rendered layouts/_main.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 3239)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.3ms | Allocations: 3471)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:37:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.2ms | Allocations: 562)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 75)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 2659)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 2891)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:37:03 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 653)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 75)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 2785)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 3017)
+
+
+Started POST "/login" for 192.168.65.1 at 2025-03-22 16:37:08 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"sugu01140114@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sugu01140114@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 237ms (ActiveRecord: 0.6ms | Allocations: 891)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-22 16:37:09 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 517)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 138)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 2724)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.3ms | Allocations: 3343)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:37:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.4ms | Allocations: 569)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 75)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 2668)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 2901)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-03-22 16:37:23 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 653)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 75)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 2797)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 3029)
+
+
+Started POST "/login" for 192.168.65.1 at 2025-03-22 16:37:30 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"sugu01140114@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sugu01140114@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:23:in `remember'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2025-03-22 07:37:30.543405', `users`.`remember_digest` = '$2a$12$h6e5KwaO8vajiUrLZpNmUOVcR2eOK42.m8wQsHDdlPf4ji5YfvoFe' WHERE `users`.`id` = 13[0m
+  ↳ app/models/user.rb:23:in `remember'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:23:in `remember'
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 465ms (ActiveRecord: 4.1ms | Allocations: 2404)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-22 16:37:30 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 575)
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 138)
+  Rendered layouts/_main.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2770)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 3389)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:37:40 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.3ms | Allocations: 568)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:17:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 229.7ms | Allocations: 607)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 237.9ms | Allocations: 3233)
+Completed 200 OK in 240ms (Views: 238.3ms | ActiveRecord: 0.3ms | Allocations: 3465)
+
+
+Started GET "/users/13" for 192.168.65.1 at 2025-03-22 16:37:44 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  Rendered users/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 579)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 138)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 2772)
+Completed 200 OK in 17ms (Views: 12.1ms | ActiveRecord: 0.8ms | Allocations: 3388)
+
+
+Started DELETE "/logout?_method=delete" for 192.168.65.1 at 2025-03-22 16:37:47 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 13 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:15:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32:in `forget'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2025-03-22 07:37:47.237084', `users`.`remember_digest` = NULL WHERE `users`.`id` = 13[0m
+  ↳ app/models/user.rb:32:in `forget'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32:in `forget'
+Redirected to http://localhost:3000/
+Completed 303 See Other in 14ms (ActiveRecord: 4.9ms | Allocations: 2193)
+
+
+Started GET "/" for 192.168.65.1 at 2025-03-22 16:37:47 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 2.3ms | Allocations: 572)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 75)
+  Rendered layouts/_main.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2806)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 3042)
+
+
