@@ -2,6 +2,8 @@
 @import '../page/home';
 @import '../page/signup';
 @import '../page/login';
+@import '../page/edit';
+@import '../page/index';
 
 main{
     height: 100%;
@@ -40,5 +42,11 @@ main{
         .login-form-container{
             @extend .login-form-container;
             }
+        .edit-form-container{
+            @extend .edit-form-container;
+        }
+        .users-container{
+            @extend .users-container;
+        }
     }
 }

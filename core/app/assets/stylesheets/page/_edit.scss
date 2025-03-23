@@ -1,0 +1,31 @@
+@import '../variables';
+@import '../shared/error_messages';
+@import '../shared/form_container';
+@import '../shared/form';
+@import '../shared/form_title';
+@import '../shared/form_with_border';
+@import '../shared/form_button';
+
+.edit-form-container{
+    @extend .form-container;
+
+    .form-title{
+        @extend .form-title;
+    }
+
+    .form{
+        @extend .form;
+
+        .error_messages{
+            @extend .error_messages;
+        }
+
+        .form-with-border{
+            @extend .form-with-border;
+        }
+
+        .form-button{
+            @extend .form-button;
+        }
+    }
+}

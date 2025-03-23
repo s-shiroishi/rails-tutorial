@@ -24,6 +24,10 @@ header{
                 gap: 30px;
                 color: $gray;
 
+                li:hover{
+                    color: $light-blue;
+                }
+
                 .account{
                     cursor: pointer;
                 }
@@ -46,6 +50,10 @@ header{
                         padding-left: 15px;
                         color: $black;
                         padding-bottom: 10px;
+
+                        &:hover{
+                            color: $light-blue;
+                        }
                     }
                     hr{
                         padding-top: 10px;

@@ -1,0 +1,17 @@
+<%= provide(:title, 'Edit user') %>
+
+<div class='edit-form-container'>
+    <h2 class='form-title'>Update your profile</h2>
+    <%= form_with(model: @user, html: { class: 'form' }) do |f|%>
+    <%= render 'shared/error_messages', object: f.object%>
+    <%= f.label :name%>
+    <%= f.text_field :name, class: "form-with-border" %>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-with-border" %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-with-border" %>
+    <%= f.label :password_confirmation, 'Confirmation' %>
+    <%= f.password_field :password_confirmation, class: "form-with-border" %>
+    <%= f.submit "Save changes", class: "form-button" %>
+    <% end %>
+</div>
