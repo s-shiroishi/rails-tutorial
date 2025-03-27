@@ -30,6 +30,17 @@ main{
             border-radius: 10px;
         }
 
+        .flash-warning{
+            font-weight: 500;
+            padding: 20px 15px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            color: $dark-pink;
+            background-color: $light-yellow;
+            border: 1px solid $dark-yellow;
+            border-radius: 10px;
+        }
+
         @extend .container;
         .home{
             @extend .home;

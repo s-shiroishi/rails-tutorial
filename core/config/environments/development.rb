@@ -39,6 +39,9 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+  host = 'localhost:3000'
+  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
@@ -73,4 +76,15 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+   address:              'smtp.gmail.com',
+   port:                  587,
+   domain:               'example.com',
+   user_name:            'sugu01140114@gmail.com',
+   password:             'cqfw cgpf phbj obvg',
+   authentication:       'plain',
+   enable_starttls_auto:  true
+  }
 end
