@@ -41,6 +41,17 @@ main{
             border-radius: 10px;
         }
 
+        .flash-info{
+            font-weight: 500;
+            padding: 20px 15px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            color: $light-blue;
+            background-color: $sky-blue;
+            border: 1px solid $light-blue;
+            border-radius: 10px;
+        }
+
         @extend .container;
         .home{
             @extend .home;

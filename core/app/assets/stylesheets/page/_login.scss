@@ -20,6 +20,12 @@
             @extend .form-with-border;
         }
 
+        .forgot-password-link{
+            font-size: medium;
+            font-weight: 300;
+            color: $light-blue;
+        }
+
         .checkbox{
             color: $dark-gray;
             font-size: small
