@@ -4,6 +4,7 @@
 @import '../page/login';
 @import '../page/edit';
 @import '../page/index';
+@import '../page/profile';
 
 main{
     height: 100%;
@@ -69,6 +70,9 @@ main{
         }
         .users-container{
             @extend .users-container;
+        }
+        .profile-container{
+            @extend .profile-container;
         }
     }
 }
